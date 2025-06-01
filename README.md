@@ -8,7 +8,7 @@ The project aims to provide researchers with a low-cost, open-source pan-tilt (P
 | 2        | Raspberry Pi 16 MM Lens              | 59.00     | 1      | [Link](https://buyzero.de/en/products/16mm-teleobjektiv-fur-hq-kamera-16mm-telephoto-lens-for-hq-camera) |
 | 3        | Raspberry Pi 12 MP HQ Camera         | 52.00     | 1      | [Link](https://www.digikey.de/short/p40hw30b) |
 | 4        | Micro-SDHC 32 GB, 120 MB/s           | 5.70      | 1      | [Link](https://www.berrybase.de/sandisk-ultra-microsdhc-a1-120mb-s-class-10-speicherkarte-adapter-32gb) |
-| 5        | SG90 9 g Micro Servomotor            | 12.52     | 6      | [Link](https://www.reichelt.com/de/en/shop/product/raspberry_pi_-_motor_control_incl_stepper_motors_uln2803apg-176628) |
+| 5        | RB-Moto2 with 28byj-48 Stepper Motors            | 12.52     | 6      | [Link](https://www.reichelt.com/de/en/shop/product/raspberry_pi_-_motor_control_incl_stepper_motors_uln2803apg-176628) |
 | 6        | Intenso 7313535 Powerbank 10,000 mAh | 14.49     | 1      | [Link](https://amzn.eu/d/eHD4hbB) |
 | 7        | Prusament PETG Filament (1 kg)       | 29.99     | 1      | [Link](https://www.prusa3d.com/de/produkt/prusament-petg-carmine-red-transparent-1kg/) |
 | 8        | Charge Cable (C to C)                | 13.84     | 1      | [Link](https://de.rs-online.com/web/p/usb-kabel/2566994?gb=bb) |
