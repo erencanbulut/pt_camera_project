@@ -20,9 +20,9 @@ The project aims to provide researchers with a low-cost, open-source pan-tilt (P
 | 14       | M2 Hex Nuts                          | 1.08      | 4      | [Link](https://rc-schrauben.de/Hexagon-Nut-DIN-934-M2-Stainless-steel) |
 |          | **Total Price**                      | **248.11**|        |      |
 
-# Results and Discussion Summary
+# Test and Performance Analyses
 
-This part summarizes the experimental results of the project.
+This part summarizes the experimental results and performance analyses.
 
 ---
 
@@ -64,7 +64,7 @@ This part summarizes the experimental results of the project.
 | 2 m      | 48.61%         |
 
 - **Test**: HSV-based tracking of a fast-dropping yellow ball.
-  **Simulation**: UAV speed during descent (5 m/s).
+- **Simulation**: UAV speed during descent (5 m/s).
 - **Insight**: Detection improves with distance due to better motion visibility.
 - **Needs**:
   - Faster frame rate
@@ -83,7 +83,7 @@ This part summarizes the experimental results of the project.
 | 2 m      | 96.41%         |
 
 - **Test**: HSV-based tracking of a laterally oscillating yellow ball.
-- **Simulation**: UAV lateral drift (300 °/s).
+- **Simulation**: UAV lateral drift (300°/s).
 - **Finding**: Excellent performance for lateral motion at long range (2 m).
 
 ---
