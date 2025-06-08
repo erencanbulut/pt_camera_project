@@ -1,5 +1,8 @@
 # PT Camera Project
+
 The project aims to provide researchers with a low-cost, open-source pan-tilt (PT) camera system for use in various robotic applications, such as autonomous unmanned aerial vehicle (UAV) landings on unmanned surface vehicles (USVs).
+
+<img src="images/assembly_left_back.jpg" alt="PT Camera Assembly" width="920"/>
 
 # BoM
 | Item Nr. | Product                              | Price (€) | Pieces | Link |
