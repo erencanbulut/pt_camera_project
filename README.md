@@ -19,3 +19,130 @@ The project aims to provide researchers with a low-cost, open-source pan-tilt (P
 | 13       | M2 Cylinder Screws                   | 1.60      | 8      | [Link](https://rc-schrauben.de/Zylinderkopfschraube-DIN-912-M2-x-8-Stahl-129) |
 | 14       | M2 Hex Nuts                          | 1.08      | 4      | [Link](https://rc-schrauben.de/Hexagon-Nut-DIN-934-M2-Stainless-steel) |
 |          | **Total Price**                      | **248.11**|        |      |
+
+# Results and Discussion Summary
+
+This part summarizes the experimental results of the project.
+
+---
+
+## Pan and Tilt Performance
+
+### Maximum Angular Speed
+
+| Axis | Theoretical Speed | Measured Avg. Speed | Notes |
+|------|-------------------|---------------------|-------|
+| Pan  | 31.39°/s          | ~28.83°/s           | Small loss (~8%) |
+| Tilt | 48.83°/s          | ~38.69°/s           | Greater loss (~20%) |
+
+- **Cause**: Mechanical design and weight.
+- **Solution**: Higher torque motors, lighter construction, step timing optimization.
+
+### Maximum Angular Range
+
+| Axis | Max Angle (Up/Down) |
+|------|---------------------|
+| Pan  | ~270°               |
+| Tilt | ~28.5° / ~95°       |
+
+- **Limitation**: Upward tilt constrained by cable strain and mechanical interference.
+
+### Combined Motion Execution Time
+
+- **Expected**: 6.34 s
+- **Measured**: ~22.7% longer
+- **Reason**: Acceleration delay and stepper lag during combined pan/tilt motion
+
+---
+
+## Object Detection – Free-Fall (Vertical)
+
+| Distance | Detection Rate |
+|----------|----------------|
+| 0.5 m    | 17.64%         |
+| 1 m      | 23.74%         |
+| 2 m      | 48.61%         |
+
+- **Test**: HSV-based tracking of a fast-dropping yellow ball.
+- **Insight**: Detection improves with distance due to better motion visibility.
+- **Needs**:
+  - Faster frame rate
+  - Reduced exposure time
+  - Predictive tracking (Kalman)
+  - Real-time lightweight AI models
+
+---
+
+## Object Detection – Oscillation (Lateral)
+
+| Distance | Detection Rate |
+|----------|----------------|
+| 0.5 m    | 25.05%         |
+| 1 m      | 59.05%         |
+| 2 m      | 96.41%         |
+
+- **Simulation**: UAV lateral drift.
+- **Finding**: Excellent performance for lateral motion at mid-to-long range.
+
+---
+
+## Latency Analysis
+
+- **Mean latency**: ~93.75 ms
+- **Range**: 83.3 – 104.2 ms
+- **Impact**: 
+  - UAV vertical displacement during latency:
+    \[
+    \Delta h = 5 \, \text{m/s} \cdot 0.09375 \, \text{s} = 0.47 \, \text{m}
+    \]
+  - This is ~18% of the camera's vertical FoV (2.65 m) — UAV remains in frame.
+
+**Conclusion**: Sufficient for real-time UAV tracking (<150 ms acceptable limit)
+
+---
+
+## Power Consumption
+
+- 10,000 mAh battery yields **8+ hours** runtime during full tracking operation.
+- ~5× better energy efficiency than commercial PTZ systems.
+- Modular design allows for easy battery replacement or upgrades.
+
+---
+
+## Maritime Suitability (Sea State)
+
+| Sea State | Status                   |
+|-----------|--------------------------|
+| SS 0–3    | Stable tracking        |
+| SS 4      | Reduced performance    |
+| SS 5+     | Not suitable           |
+
+---
+
+## Commercial Comparison
+
+### Advantages
+- Modular and open-source
+- Low-cost and long battery life
+- Reliable object tracking (esp. lateral)
+- Weather-resistant housing
+
+### Limitations
+- Slower tracking speeds
+- Higher weight → suited for static or vehicle-mounted use
+- Upward tilt angle limited by cable routing
+
+---
+
+## Recommended Improvements
+
+- Upgrade to stronger, faster stepper motors
+- Redesign cable routing for better tilt range
+- Optimize mechanical parts for weight reduction
+- Use Jetson Nano/Xavier for real-time AI-based tracking
+- Add stereo vision for 3D detection and UAV depth estimation
+- Field test in maritime environments
+
+---
+
+📁 GitHub Repository: [erencanbulut/pt_camera_project](https://github.com/erencanbulut/pt_camera_project)
