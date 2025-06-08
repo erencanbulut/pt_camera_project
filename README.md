@@ -42,15 +42,15 @@ This part summarizes the experimental results of the project.
 
 | Axis | Max Angle (Up/Down) |
 |------|---------------------|
-| Pan  | ~270°               |
-| Tilt | ~28.5° / ~95°       |
+| Pan  | ±360°               |
+| Tilt | -95° to +30°      |
 
-- **Limitation**: Upward tilt constrained by cable strain and mechanical interference.
+- **Limitation**: Weight and cable strain.
 
 ### Combined Motion Execution Time
 
 - **Expected**: 6.34 s
-- **Measured**: ~22.7% longer
+- **Measured**: 7.78 s (~22.7% longer)
 - **Reason**: Acceleration delay and stepper lag during combined pan/tilt motion
 
 ---
@@ -64,6 +64,7 @@ This part summarizes the experimental results of the project.
 | 2 m      | 48.61%         |
 
 - **Test**: HSV-based tracking of a fast-dropping yellow ball.
+  **Simulation**: UAV speed during descent (5 m/s).
 - **Insight**: Detection improves with distance due to better motion visibility.
 - **Needs**:
   - Faster frame rate
@@ -81,8 +82,9 @@ This part summarizes the experimental results of the project.
 | 1 m      | 59.05%         |
 | 2 m      | 96.41%         |
 
-- **Simulation**: UAV lateral drift.
-- **Finding**: Excellent performance for lateral motion at mid-to-long range.
+- **Test**: HSV-based tracking of a laterally oscillating yellow ball.
+- **Simulation**: UAV lateral drift (300 °/s).
+- **Finding**: Excellent performance for lateral motion at long range (2 m).
 
 ---
 
@@ -91,11 +93,8 @@ This part summarizes the experimental results of the project.
 - **Mean latency**: ~93.75 ms
 - **Range**: 83.3 – 104.2 ms
 - **Impact**: 
-  - UAV vertical displacement during latency:
-    \[
-    \Delta h = 5 \, \text{m/s} \cdot 0.09375 \, \text{s} = 0.47 \, \text{m}
-    \]
-  - This is ~18% of the camera's vertical FoV (2.65 m) — UAV remains in frame.
+  - Camera preview latency measured using 240 fps slow-motion recording.
+  - Frame difference used to calculate latency: Latency (ms) = (Δframes / 240) x 1000
 
 **Conclusion**: Sufficient for real-time UAV tracking (<150 ms acceptable limit)
 
@@ -130,7 +129,6 @@ This part summarizes the experimental results of the project.
 ### Limitations
 - Slower tracking speeds
 - Higher weight → suited for static or vehicle-mounted use
-- Upward tilt angle limited by cable routing
 
 ---
 
